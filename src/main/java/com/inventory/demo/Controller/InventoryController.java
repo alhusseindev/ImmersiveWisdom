@@ -36,11 +36,8 @@ public class InventoryController {
 
 
     @RequestMapping(value= "/", params={"itemStatus", "itemEnteredByUser"})
-    public Inventory searchInventoryBy(@RequestParam("itemStatus") ItemStatus status, @RequestParam("itemEnteredByUser") String enteredBy){
-        Inventory myInventory = new Inventory();
-        status = myInventory.getItemStatus();
-        enteredBy = myInventory.getItemEnteredByUser();
-        return myInventory;
+    public List<Inventory> searchInventoryBy(@RequestParam("itemStatus") ItemStatus status, @RequestParam("itemEnteredByUser") String enteredBy){
+        return myInventoryRepository.findAllByItemStatusAndItemEnteredByUser(status, enteredBy);
     }
 
 
