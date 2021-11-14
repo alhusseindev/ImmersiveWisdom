@@ -5,6 +5,7 @@ import com.inventory.demo.Entity.Inventory;
 import com.inventory.demo.Enum.ItemStatus;
 import com.inventory.demo.Exceptions.InventoryException;
 import com.inventory.demo.Repository.InventoryRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
@@ -19,7 +20,8 @@ import java.util.List;
 @CrossOrigin
 public class InventoryController {
 
-    private static InventoryRepository myInventoryRepository;
+    @Autowired
+    private InventoryRepository myInventoryRepository;
 
 
     @GetMapping("/")
