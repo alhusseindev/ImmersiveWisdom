@@ -19,10 +19,10 @@ public class Inventory {
     private Integer itemId;
     private String itemName;
     private String itemEnteredByUser;
-    private LocalDateTime itemEnteredDate;
+    private LocalDateTime itemEnteredDate = LocalDateTime.now();
     private Double  itemBuyingPrice;
     private Double itemSellingPrice;
-    private LocalDateTime itemLastModifiedDate;
+    private LocalDateTime itemLastModifiedDate = LocalDateTime.now();
     private String itemLastModifiedByUser;
     private ItemStatus itemStatus;
 
