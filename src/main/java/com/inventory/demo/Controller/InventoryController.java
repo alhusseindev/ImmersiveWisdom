@@ -35,8 +35,8 @@ public class InventoryController {
 
 
 
-    @RequestMapping(value= "/", params={"status", "enteredBy"})
-    public Inventory searchInventoryBy(@RequestParam("status") ItemStatus status, @RequestParam("enteredBy") String enteredBy){
+    @RequestMapping(value= "/", params={"itemStatus", "itemEnteredByUser"})
+    public Inventory searchInventoryBy(@RequestParam("itemStatus") ItemStatus status, @RequestParam("itemEnteredByUser") String enteredBy){
         Inventory myInventory = new Inventory();
         status = myInventory.getItemStatus();
         enteredBy = myInventory.getItemEnteredByUser();
