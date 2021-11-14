@@ -22,7 +22,7 @@ public class Inventory {
     private LocalDateTime itemEnteredDate;
     private Double  itemBuyingPrice;
     private Double itemSellingPrice;
-    private LocalDateTime itemLastModifiedDate = LocalDateTime.now();
+    private LocalDateTime itemLastModifiedDate;
     private String itemLastModifiedByUser;
     private ItemStatus itemStatus;
 
@@ -30,11 +30,10 @@ public class Inventory {
     public Inventory(){}
 
 
-    public Inventory(Integer itemId, String itemName, String itemEnteredByUser, LocalDateTime itemEnteredDate, Double  itemBuyingPrice, Double itemSellingPrice, String itemLastModifiedByUser, ItemStatus itemStatus){
+    public Inventory(Integer itemId, String itemName, String itemEnteredByUser, Double  itemBuyingPrice, Double itemSellingPrice, String itemLastModifiedByUser, ItemStatus itemStatus){
         this.itemId = itemId;
         this.itemName = itemName;
         this.itemEnteredByUser = itemEnteredByUser;
-        this.itemEnteredDate = itemEnteredDate;
         this.itemBuyingPrice = itemBuyingPrice;
         this.itemSellingPrice = itemSellingPrice;
         this.itemLastModifiedByUser = itemLastModifiedByUser;
