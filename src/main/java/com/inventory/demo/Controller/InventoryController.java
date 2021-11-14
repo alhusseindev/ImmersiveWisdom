@@ -2,6 +2,7 @@ package com.inventory.demo.Controller;
 
 
 import com.inventory.demo.Entity.Inventory;
+import com.inventory.demo.Enum.ItemStatus;
 import com.inventory.demo.Exceptions.InventoryException;
 import com.inventory.demo.Repository.InventoryRepository;
 import org.springframework.data.domain.Page;
@@ -32,7 +33,7 @@ public class InventoryController {
     }
 
     @GetMapping("/")
-    public Inventory searchInventoryBy(@RequestParam("status") Inventory.ItemStatus status, @RequestParam("enteredBy") String enteredBy){
+    public Inventory searchInventoryBy(@RequestParam("status") ItemStatus status, @RequestParam("enteredBy") String enteredBy){
         Inventory myInventory = new Inventory();
         status = myInventory.getItemStatus();
         enteredBy = myInventory.getItemEnteredByUser();

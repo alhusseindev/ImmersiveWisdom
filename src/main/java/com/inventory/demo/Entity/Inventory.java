@@ -1,6 +1,8 @@
 package com.inventory.demo.Entity;
 
 
+import com.inventory.demo.Enum.ItemStatus;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,10 +12,6 @@ import java.time.LocalDateTime;
 @Entity
 @Table
 public class Inventory {
-    public enum ItemStatus{
-        AVAILABLE,SOLD;
-    };
-
 
     @Id @GeneratedValue
     private Integer itemId;
