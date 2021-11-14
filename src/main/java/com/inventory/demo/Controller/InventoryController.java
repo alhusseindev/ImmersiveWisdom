@@ -32,7 +32,10 @@ public class InventoryController {
         return myInventoryRepository.findById(itemId).orElseThrow(() -> new InventoryException("Error Finding Item in Inventory!"));
     }
 
-    @GetMapping("/")
+
+
+
+    @RequestMapping(value= "/", params={"status", "enteredBy"})
     public Inventory searchInventoryBy(@RequestParam("status") ItemStatus status, @RequestParam("enteredBy") String enteredBy){
         Inventory myInventory = new Inventory();
         status = myInventory.getItemStatus();
@@ -41,15 +44,13 @@ public class InventoryController {
     }
 
 
-    @GetMapping("/")
+    @RequestMapping(value="/", params={"pageSize", "page", "sortBy"})
     public Page<Inventory> findAllBy(@RequestParam("pageSize") Pageable pageSize, @RequestParam("page") String page, @RequestParam("sortBy") String sortByField){
         PageRequest myPageRequest = PageRequest.of(Integer.parseInt(page), Integer.parseInt(String.valueOf(pageSize)), Sort.by(sortByField));
 
         return myInventoryRepository.findAll(myPageRequest);
 
     }
-
-
 
 
     @PostMapping("/")
